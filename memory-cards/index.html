@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" 
+        integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <title>memory-cards</title>
+</head>
+<body>
+    <h1>
+        Memory Cards
+        <button class="btn add">
+            <i class="fas fa-plus"></i>
+            Add New Card
+        </button>
+    </h1>
+    <div class="container">
+
+            <!-- <div class="cards left">
+                <div class="card-front">
+                    <p>问题1</p>
+                </div>
+                <div class="card-back">
+                    <p>答案1</p>
+                </div>
+            </div>
+        
+            <div class="cards active">
+                <div class="card-front">
+                    <p>问题2</p>
+                </div>
+                <div class="card-back">
+                    <p>答案2</p>
+                </div>
+            </div>
+
+            <div class="cards right">
+                <div class="card-front">
+                    <p>问题3</p>
+                </div>
+                <div class="card-back">
+                    <p>答案3</p>
+                </div>
+            </div> -->
+        
+    </div>
+    <nav class="navigation">
+        <button id="pre" class="btn"><i class="fas fa-arrow-left"></i></button>
+        <p><span id="nowIndex">1</span>/<span id="totalIndex">1</span></p>
+        <button id="next" class="btn"><i class="fas fa-arrow-right"></i></button>
+    </nav>
+    <button id="clear" class="btn clear"><i class="fas fa-trash"></i>Clear Cards</button>
+    <section class="add-container" id="add-container">
+        <h1>
+            Add New Card 
+            <button id="hide" class="btn btn-small btn-ghost">
+                <i class="fas fa-times"></i>
+            </button>
+        </h1>
+        <div class="form-group">
+            <label for="question">Question</label>
+            <textarea id="question" placeholder="Enter question..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="answer">Question</label>
+            <textarea id="answer" placeholder="Enter answer..."></textarea>
+        </div>
+        <button id="add-card" class="btn">
+            <i class="fas fa-plus"></i>
+            Add Card
+        </button>
+    </section>
+</body>
+</html>

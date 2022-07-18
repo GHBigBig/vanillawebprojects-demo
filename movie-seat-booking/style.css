@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #242333;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+}
+
+.movie-container {
+    margin: 20px 0;
+}
+
+.movie-container select {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 0;
+    appearance: none;
+}
+
+.showcase {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #777;
+    list-style-type: none;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.showcase li {
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+
+.screen {
+    height: 70px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgb(255 255 255 / 70%);
+    margin: 15px 0;
+    transform: rotateX(-45deg);
+}
+
+.row {
+    display: flex;
+}
+
+.seat {
+    width: 15px;
+    height: 12px;
+    background-color: #444451;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    margin: 3px;
+}
+
+.seat:nth-of-type(2) {
+    margin-right: 18px;
+}
+.seat:nth-last-of-type(2) {
+    margin-left: 18px;
+}
+
+.seat:not(.occupied):hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.selected{
+    background-color: #6FEAF6;
+}
+
+.occupied {
+    background-color: #fff;
+}
+
+p.text {
+    margin: 5px 0;
+}
+
+p.text span {
+    color: #6feaf6;
+}

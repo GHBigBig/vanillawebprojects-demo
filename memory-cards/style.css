@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,500,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;   /* 解决界面出现滚动条，卡片导致的溢出 */
+}
+
+/* 为什么界面中的元素的宽度向左溢出时不会导致水平滚动条的出现，而
+    向右溢出会呢？
+*/
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    border: 1px solid #aaa;
+    background: #fff;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.btn.add {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+.container {
+    width: 500px;
+    height: 300px;
+    max-width: 100%;
+    position: relative;
+    perspective: 1000px;    /* 定义观察者与z=0平面的距离，子元素会获取透视效果，
+                            而不是元素本身（透视方式也就是近大远小的显示方式） */
+    
+}
+
+.cards {
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    /*overflow: auto; 触发 BFC（块格式化上下文）解决 margin 父子之间的传递问题 */
+    position: absolute;
+    font-size: 1.5em;
+    transform-style: preserve-3d;   /* 设置子元素是位于 3D 空间中还是平面中 */
+    transition: transform 1.2s ease-out;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+}
+
+.cards.left {
+    transform: translateX(-50%) rotateY(10deg);
+}
+
+.cards.right {
+    transform: translateX(50%) rotateY(-10deg);
+}
+.cards.active {
+    z-index: 10;
+    opacity: 1;
+}
+
+.cards.show-answer {
+    transform: rotateX(180deg);
+}
+
+.card-front,.card-back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;    /* 在3D旋转中，指定当元素背面是否可见 */
+    background: #fff;   /* 遮挡另一图层的东西 */
+    cursor: pointer;
+}
+
+.card-front p,.card-back p { 
+    word-wrap: break-word;  /* 允许长单词换行到下一行 */
+    word-break: normal;     /*自动换行的处理方法 */
+    width: 100%;    /* 只有加上这条 CSS 规则，p 中的文字才可以换行 */
+}
+
+.card-front::after,.card-back::after {
+    content: '\f021 Flip';
+    font-family: 'Font Awesome 5 Free', Lato, sans-serif;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    font-weight: bolder;
+    color: #ddd;
+}
+
+.card-back {
+    transform: rotateX(180deg); /* 以 X 轴为中心旋转180度的目的是为了当父容器旋转180度时ta看起来是时正的 */
+}
+
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation button {
+    border: 0;
+    font-size: 16px;
+}
+
+.navigation p {
+    margin: 0 10px;
+}
+
+.btn.clear {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.add-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-out;
+}
+
+.add-container.show {
+    opacity: 1;
+    z-index: 10;
+}
+
+.btn-ghost {
+    border: 0;
+    background: transparent;
+}
+
+.form-group {
+    width: 500px;
+    margin: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-group textarea {
+    width: 100%;
+    height: 60px;
+    resize: vertical;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+

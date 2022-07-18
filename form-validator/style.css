@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+:root {
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9fafb;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+
+    /* */
+    width: 400px;
+}
+
+
+.form {
+    padding: 30px 40px;
+    
+    /* width: 100%; 西八 */
+}
+
+h2 {
+    text-align: center;
+
+    /* 差距 */
+    margin: 0 0 20px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+
+    /* width: 100%; 西八 */
+
+}
+
+.form label {
+    display: block;
+
+    /* 差距 */
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+
+    /* 差距 */
+    border-radius: 4px;
+    border: 2px solid #f0f0f0;
+    font-size: 14p;
+}
+
+.form-control input:focus { /* 差距 */
+    outline: 0;
+    border-color: #777;
+}
+
+.form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+
+    /* 差距 */
+    cursor: pointer;
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    margin-top: 20px;
+}
+
+/* 差距 */
+.form-control.success input {
+    border-color: var(--success-color);
+}
+.form-control.error input {
+    border-color: var(--error-color);
+}
+
+.form small {
+    visibility: hidden;
+
+    /* 差距 */
+    color: var(--error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.form-control.error small {
+    visibility: visible;
+    
+}

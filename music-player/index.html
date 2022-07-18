@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <title>music-playe</title>
+</head>
+<body>
+    <h1>Music Player</h1>
+    <div class="music-container" id="music-container">
+        <div class="music-info no-play" id="music-info">
+            <h4 id="title">summer</h4>
+            <div class="progress-container" id="progress-container">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+        <audio src="./music/summer.mp3" id="audio"></audio>
+        <div class="img-container">
+            <img src="./images/summer.jpg" alt="summer" id="cover" class="no-play">
+        </div>
+        <div class="navigation">
+            <button class="action-btn" id="prev">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button class="action-btn action-btn-big" id="play">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="action-btn" id="next">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

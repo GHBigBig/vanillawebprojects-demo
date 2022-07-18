@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #2d2013;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;;
+}
+
+.container {
+    margin: auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+input, button {
+    padding: 8px 10px;
+    border: 1px solid #dedede;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin: 0;
+    font-size: 14px;
+}
+
+.search-bt {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.random-btn {
+    margin-left: 10px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+input[type="text"] {
+    width: 300px;
+}
+
+.meals {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.meals p {
+    grid-column: 1/5;
+}
+
+.meal {
+    cursor: pointer;
+    position: relative;
+    height: 180px;
+    width: 180px;
+    text-align: center;
+}
+
+.meal img {
+    height: 100%;
+    width: 100%;
+    border: 4px solid #fff;
+    border-radius: 2px;
+}
+
+.meal-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* height: 100%;
+    width: 100%; */
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.2s ease-in;
+}
+
+.single-meal img {
+    width: 300px;
+    margin: 15px;
+    border: 4px #fff solid;
+    border-radius: 2px;
+}
+
+.single-meal-info {
+    margin: 20px;
+    padding: 10px;
+    border: 2px dashed #e09850;
+}
+
+.single-meal p {
+    margin: 0;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+.single-meal ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.single-meal ul li {
+    padding: 5px;
+    background: #fff;
+    margin: 0 5px 5px 0;
+    color: #2d2013;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}

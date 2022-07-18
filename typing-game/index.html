@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" 
+        integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <title>speed typer</title>
+</head>
+<body>
+    <button id="settings-btn" class="settings-btn">
+        <i class="fas fa-cog"></i>
+    </button>
+    <div id="settings" class="settings">
+        <form id="settings-form">
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </form>
+    </div>
+    <main class="container">
+        <h2>👩‍💻 Speed Typer 👨‍💻</h2>
+        <div class="tip">
+            <p class="time-container">Time left: <span id="time"></span>s</p>
+            <p class="score-container">Score: <span id="score"></span></p>
+        </div>
+        <small>Type the following:</small>
+        <h1 id="word"></h1>
+        <input type="text" id="text" autocomplete="off" placeholder="Type the word here...">
+        <section id="end-game-container" class="end-game-container noshow">
+            <h1>Time ran out</h1>
+            <p>Your final score is <span id="end-score"></span></p>
+            <button>Reload</button>
+        </section>
+    </main>
+</body>
+</html>

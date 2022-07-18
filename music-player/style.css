@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient( 358deg, rgba(247, 247, 247, 1) 23.8%, rgba(252, 221, 221, 1) 92% );
+    font-family: 'Lato', sans-serif;
+}
+
+.music-container {
+    display: flex;
+    position: relative;
+    margin: 100px 0;
+    padding: 20px 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
+}
+
+.music-info {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    transform: translateY(-100%);
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: calc(100% - 40px);
+    border-radius: 15px 15px 0 0;
+    padding: 10px 10px 10px 150px;
+    opacity: 1;
+    /* z-index: -1; 会造成点击不到图层，无法触发事件 */
+    transition: transform 0.8s ease-out,opacity 0.4s ease-out;
+    z-index: 0;
+}
+
+.music-info.no-play {
+    opacity: 0;
+    transform: translateY(0);
+    transition: transform 1s ease,opacity 0.4s ease-out;  
+}
+
+.music-info h4 {
+    margin: 0%;
+}
+
+.progress-container {
+    margin: 10px 0;
+    height: 4px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.progress {
+    background-color: #fe8daa;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    border-radius: 2px;
+}
+
+
+
+.img-container {
+    width: 110px;
+    position: relative;
+}
+
+.img-container img {
+    width: inherit;
+    height: 110px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: rotate 5s linear infinite;
+}
+
+.img-container img.no-play {
+    animation-play-state: paused;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.img-container::after {
+    content: '';
+    background-color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 55px;
+    left: 55px;
+    transform: translate(-50%, 50%);
+   
+}
+
+
+.navigation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+
+.action-btn {
+    padding: 10px;
+    margin: 0 20px;
+    font-size: 20px ;
+    background-color: #fff;
+    color: #dfdbdf;
+    border: 0;
+}
+
+.action-btn.action-btn-big {
+    font-size: 30px;
+    color: #cdc2d0;
+}
+
